@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Data fake API 1",
+      "description": "desc 1"
+    },
+    {
+      "id": 2,
+      "title": "Data fake API 2",
+      "description": "desc 2"
+    },
+    {
+      "id": 3,
+      "title": "Data fake API 3",
+      "description": "desc 3"
+    },
+    {
+      "id": 4,
+      "title": "Data fake API 4",
+      "description": "desc 4"
+    },
+    {
+      "id": 1615604846150,
+      "title": "Data Fake API 5",
+      "description": "desc 5"
+    },
+    {
+      "id": 1615611400721,
+      "title": "Data Fake API 6",
+      "description": "desc 6"
+    },
+    {
+      "id": 1615611437824,
+      "title": "Data Fake API 7",
+      "description": "desc 7"
+    }
+  ]
+}

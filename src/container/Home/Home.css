@@ -1,0 +1,13 @@
+.navbar{
+    background: navy;
+    padding: 30px;
+}
+
+.navbar a{
+    background: white;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px 30px;
+}
