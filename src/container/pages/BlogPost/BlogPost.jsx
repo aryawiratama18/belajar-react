@@ -98,6 +98,10 @@ class BlogPost extends Component{
         })
     }
 
+    handleDetail = (dataID) => {
+        this.props.history.push('/detail-post/' + dataID)
+    }
+
     handlerFormChange = (event) => {
         // console.log(event.target)
         let formBlogPostNew = {...this.state.formBlogPost};
@@ -149,7 +153,7 @@ class BlogPost extends Component{
                 {
                     this.state.post.map(post => {
                         // return <Post key={post.id} title={post.title} desc={post.body}/>
-                        return <Post key={post.id} data={post} update={this.handleUpdate} remove={this.handleRemove}/>
+                        return <Post key={post.id} data={post} update={this.handleUpdate} remove={this.handleRemove} detail={this.handleDetail}/>
                     })
                 }
             </Fragment>

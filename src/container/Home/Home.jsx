@@ -1,9 +1,15 @@
+// Library
 import React,{Component,Fragment} from 'react';
-import BlogPost from '../pages/BlogPost/BlogPost';
-import Product from '../pages/Product/Product.jsx';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
-import "./Home.css";
+
+//Pages
+import BlogPost from '../pages/BlogPost/BlogPost';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
+import Product from '../pages/Product/Product.jsx';
 import YoutubePages from '../pages/YoutubePages/YoutubePages';
+
+// Styling
+import "./Home.css";
 
 class Home extends Component{
     render(){
@@ -16,6 +22,7 @@ class Home extends Component{
                         <Link to="/yt">Youtube Pages</Link>
                     </div>
                     <Route path="/" exact component={BlogPost}/>
+                    <Route path="/detail-post/:id" component={DetailPost}/>
                     <Route path="/product" component={Product}/>
                     <Route path="/yt" component={YoutubePages}/>
                 </Fragment>

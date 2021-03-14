@@ -1,0 +1,18 @@
+.p-detail-post {
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.detail-title {
+    font-size: 24px;;
+    font-weight: bold;
+    color: blue;
+    text-transform: capitalize;
+}
+
+.detail-desc {
+    font-size: 14px;
+    color: dimgray;
+}
