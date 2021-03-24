@@ -2,6 +2,7 @@ import React, {Component,Fragment} from  'react';
 import Post from '../../../component/Post/Post';
 import './BlogPost.css';
 import axios from 'axios';
+import API from '../../../services/index';
 
 class BlogPost extends Component{
     state ={
@@ -17,16 +18,23 @@ class BlogPost extends Component{
     // Pengambilan data dari API
     getAPI = () => {
         // Pemanggilan Fake API menggunakan axios
-        axios.get('http://localhost:3001/posts?_sort=id&_order=desc')
-        .then((res) => {
-            // console.log(res.data);
+        // axios.get('http://localhost:3001/posts?_sort=id&_order=desc')
+        // .then((res) => {
+        //     this.setState({
+        //         post: res.data
+        //     })
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+
+        // Menggunakan Global API di file terpisah
+        API.getNewsBlog().then(result => {
             this.setState({
-                post: res.data
+                post: result // Karena pada global API, result bernilai result.data, maka tinggal pamggil result saja
             })
         })
-        .catch((error) => {
-            console.log(error)
-        })
+
     }
 
     // Menghapus data dari db
@@ -54,27 +62,42 @@ class BlogPost extends Component{
                 },
             })
         })
+        
     }
 
     // Posting data baru ke database
     postAPI = () => {
-        console.log(this.state.formBlogPost)
-        axios.post('http://localhost:3001/posts/',this.state.formBlogPost)
-        .then((response)=>{
-            console.log(response)
-            this.getAPI()
+        // console.log(this.state.formBlogPost)
+        // axios.post('http://localhost:3001/posts/',this.state.formBlogPost)
+        // .then((response)=>{
+        //     console.log(response)
+        //     this.getAPI()
+        //     this.setState({
+        //         isUpdate: false,
+        //         formBlogPost: {
+        //             id: 1,
+        //             title: '',
+        //             description: ''
+        //         },
+        //     })
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+
+        // POST Menggunakan Global API
+        API.postNewsBlog(this.state.formBlogPost).then((result)=> {
+            this.getAPI();
             this.setState({
                 isUpdate: false,
                 formBlogPost: {
                     id: 1,
                     title: '',
                     description: ''
-                },
+                }
             })
         })
-        .catch((error) => {
-            console.log(error)
-        })
+
     }
 
     handleSubmit = () => {

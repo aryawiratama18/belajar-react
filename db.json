@@ -34,6 +34,16 @@
       "id": 1615611437824,
       "title": "Data Fake API 7",
       "description": "desc 7"
+    },
+    {
+      "id": 1616625888742,
+      "title": "Postingan Terbaru",
+      "description": "Ini adalah postingan terbaru menggunakan Global API"
+    },
+    {
+      "id": 1616626212485,
+      "title": "Postingan terbaru lagi nih",
+      "description": "Ini adalah Postingan setelah Global API direfactoring lagi"
     }
   ]
 }
