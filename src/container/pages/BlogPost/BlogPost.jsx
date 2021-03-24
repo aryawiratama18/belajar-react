@@ -1,7 +1,6 @@
 import React, {Component,Fragment} from  'react';
 import Post from '../../../component/Post/Post';
 import './BlogPost.css';
-import axios from 'axios';
 import API from '../../../services/index';
 
 class BlogPost extends Component{
@@ -28,7 +27,7 @@ class BlogPost extends Component{
         //     console.log(error)
         // })
 
-        // Menggunakan Global API di file terpisah
+        // GET Menggunakan Global API
         API.getNewsBlog().then(result => {
             this.setState({
                 post: result // Karena pada global API, result bernilai result.data, maka tinggal pamggil result saja
@@ -38,28 +37,48 @@ class BlogPost extends Component{
     }
 
     // Menghapus data dari db
-    deleteAPI = (data) =>{
-        // console.log(data);
-        axios.delete('http://localhost:3001/posts/' + data)
-        .then((res) => {
-            console.log(res);
+    deleteAPI = (id) =>{
+        // console.log(id);
+        // axios.delete('http://localhost:3001/posts/' + id)
+        // .then((res) => {
+        //     console.log(res);
+        //     this.getAPI()
+        // })
+
+        // DELETE Menggunakan Global API
+        API.deleteNewsBlog(id)
+        .then((result) => {
             this.getAPI()
         })
     }
 
     // Edit/update data db
     putAPI = () => {
-        axios.put('http://localhost:3001/posts/' + this.state.formBlogPost.id,this.state.formBlogPost)
-        .then((res) => {
-            console.log(res);
-            this.getAPI()
+        // axios.put('http://localhost:3001/posts/' + this.state.formBlogPost.id,this.state.formBlogPost)
+        // .then((res) => {
+        //     console.log(res);
+        //     this.getAPI()
+        //     this.setState({
+        //         isUpdate: false,
+        //         formBlogPost: {
+        //             id: 1,
+        //             title: '',
+        //             description: ''
+        //         },
+        //     })
+        // })
+
+        // PUT Menggunakan Global API
+        API.updateNewsBlog(this.state.formBlogPost,this.state.formBlogPost.id)
+        .then((result) => {
+            this.getAPI();
             this.setState({
                 isUpdate: false,
                 formBlogPost: {
                     id: 1,
                     title: '',
                     description: ''
-                },
+                }
             })
         })
         

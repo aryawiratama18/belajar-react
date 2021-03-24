@@ -26,14 +26,9 @@
       "description": "desc 5"
     },
     {
-      "id": 1615611400721,
-      "title": "Data Fake API 6",
-      "description": "desc 6"
-    },
-    {
       "id": 1615611437824,
-      "title": "Data Fake API 7",
-      "description": "desc 7"
+      "title": "Ini Adalah Postingan yang diedit",
+      "description": "Postingan ini diedit menggunakan Global service API"
     },
     {
       "id": 1616625888742,
